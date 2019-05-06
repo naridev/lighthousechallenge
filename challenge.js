@@ -11,7 +11,7 @@ var ship = {
     { name: "Module 2",     size: 20, enabled : true , essential: false},
     { name: "propulsion",   size: 30, enabled : false, essential: true },
     { name: "Module 4",     size: 40, enabled : true , essential: false},
-    { name: "Module 5",     size: 50, enabled : false, essential: true },
+    { name: "navigation",     size: 50, enabled : false, essential: true },
   ];
 
 function powerOn() {
@@ -48,5 +48,6 @@ function findModuleIndex(given){
 console.log("Essential: " + countEssential());
 loadModule(findModuleIndex("life-support"));
 loadModule(findModuleIndex("propulsion"));
+loadModule(findModuleIndex("navigation"));
 console.log(availableModules);
 console.log(ship);
