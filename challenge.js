@@ -37,16 +37,6 @@ function loadModule(index) {
   ship.modules.push(availableModules[index]);
 }
 
-function loadSupport() {
-  for (var i =0; i< availableModules.length; i++){
-    if (availableModules[i].name === "life-support"){
-      loadModule(i);
-    }
-  }
-}
-
-loadSupport();
-
 function findModuleIndex(given){
   for (var i =0; i< availableModules.length; i++){
     if (availableModules[i].name === given && availableModules[i].essential){
@@ -56,6 +46,7 @@ function findModuleIndex(given){
 }
 
 console.log("Essential: " + countEssential());
+loadModule(findModuleIndex("life-support"));
 loadModule(findModuleIndex("propulsion"));
 console.log(availableModules);
 console.log(ship);
