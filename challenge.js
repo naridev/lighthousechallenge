@@ -5,6 +5,12 @@ var ship = {
       active: false
     }
   };
+
+  var LARRY = {
+      quack() {
+      console.log("quack");
+      }
+    }
   
   const availableModules = [
     { name: "life-support", size: 10, enabled : false, essential: true },
@@ -45,9 +51,16 @@ function findModuleIndex(given){
   }
 }
 
+function resetLARRY(){
+  for (var i = 0; i<10; i++){
+    LARRY.quack();
+  }
+}
+
 console.log("Essential: " + countEssential());
 loadModule(findModuleIndex("life-support"));
 loadModule(findModuleIndex("propulsion"));
 loadModule(findModuleIndex("navigation"));
 console.log(availableModules);
 console.log(ship);
+resetLARRY();
