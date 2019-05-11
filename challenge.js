@@ -78,6 +78,14 @@ function setMessage() {
   radio.message = JSON.stringify(navigation);
 }
 
+function activateBeacon() {
+  radio.beacon = true;
+}
+
+function setFrequency() {
+  radio.frequency = (radio.range.low + radio.range.high)/2
+}
+
 console.log("Essential: " + countEssential());
 loadModule(findModuleIndex("life-support"));
 loadModule(findModuleIndex("propulsion"));
@@ -88,3 +96,5 @@ console.log(ship);
 resetLARRY();
 setMessage();
 console.log(radio);
+activateBeacon();
+console.log((radio.range.high + radio.range.low)/2)
