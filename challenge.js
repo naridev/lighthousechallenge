@@ -105,23 +105,43 @@ function checkSignal() {
   return 2;
 }
 
+//challenge 3
 console.log("Essential: " + countEssential());
+
+//challenge 4
 loadModule(findModuleIndex("life-support"));
+
+//challenge 5
 loadModule(findModuleIndex("propulsion"));
+
+//challenge 6
 loadModule(findModuleIndex("navigation"));
-loadModule(findModuleIndex("communication"));
-console.log(availableModules);
-console.log(ship);
-//challenge 9
+
+//challenge 7
 resetLARRY();
-//challenge 10
+
+//challenge 8
+loadModule(findModuleIndex("communication"));
+
+//challenge 9
 setMessage();
-console.log(radio);
-//challenge 11
+
+//challenge 10
 activateBeacon();
-console.log((radio.range.high + radio.range.low)/2)
+
+//challenge 11
+setFrequency();
+
 //challenge 12
 initialize();
+
 //challenge 13
 calibrateX();
-console.log(navigation.x);
+
+console.log("Available Modules: ");
+console.log(availableModules);
+console.log("Ship: ");
+console.log(ship);
+console.log("Radio: ");
+console.log(radio);
+console.log("Navigation X: " + navigation.x);
