@@ -86,6 +86,25 @@ function setFrequency() {
   radio.frequency = (radio.range.low + radio.range.high)/2
 }
 
+function initialize() {
+  navigation.x = 0;
+  navigation.y = 0;
+  navigation.z = 0;
+}
+
+function calibrateX() {
+  for (var i = 0; i<12; i++){
+    var signal = checkSignal();
+    if (signal) {
+      navigation.x = signal;
+    }
+  }
+}
+
+function checkSignal() {
+  return 2;
+}
+
 console.log("Essential: " + countEssential());
 loadModule(findModuleIndex("life-support"));
 loadModule(findModuleIndex("propulsion"));
@@ -93,8 +112,16 @@ loadModule(findModuleIndex("navigation"));
 loadModule(findModuleIndex("communication"));
 console.log(availableModules);
 console.log(ship);
+//challenge 9
 resetLARRY();
+//challenge 10
 setMessage();
 console.log(radio);
+//challenge 11
 activateBeacon();
 console.log((radio.range.high + radio.range.low)/2)
+//challenge 12
+initialize();
+//challenge 13
+calibrateX();
+console.log(navigation.x);
