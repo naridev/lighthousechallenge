@@ -1,3 +1,4 @@
+/*Global Objects*/
 var ship = {
     powerOn: false,
     modules: [],
@@ -36,6 +37,8 @@ var ship = {
     { name: "communication", size: 40, enabled : true , essential: true},
     { name: "navigation",     size: 50, enabled : false, essential: true },
   ];
+
+/*Functions*/
 
 function powerOn() {
   ship.powerOn= true;
@@ -104,6 +107,8 @@ function calibrateX() {
 function checkSignal() {
   return 2;
 }
+
+/*Function calls*/
 
 //challenge 3
 console.log("Essential: " + countEssential());
