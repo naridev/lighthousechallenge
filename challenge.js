@@ -130,9 +130,15 @@ function calibrate() {
   calibrateZ();
 }
 
-
 function checkSignal() {
   return Math.floor(Math.random() * Math.floor(12));
+}
+
+function setSpeed(speed) {
+  var n = parseInt(speed);
+  if (n>=0) {
+    navigation.speed = n;
+  }
 }
 
 /*Function calls*/
@@ -169,6 +175,9 @@ initialize();
 
 //challenge 13,14,15
 calibrate();
+
+//challenge 16
+setSpeed(10);
 
 console.log("Available Modules: ");
 console.log(availableModules);
