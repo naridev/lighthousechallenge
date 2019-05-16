@@ -132,7 +132,7 @@ function calibrate() {
 
 
 function checkSignal() {
-  return 2;
+  return Math.floor(Math.random() * Math.floor(12));
 }
 
 /*Function calls*/
