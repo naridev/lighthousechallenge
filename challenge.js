@@ -104,6 +104,33 @@ function calibrateX() {
   }
 }
 
+function calibrateY() {
+  for (var i = 0; i<60; i++){
+    var signal = checkSignal();
+    if (signal) {
+      navigation.y = signal;
+      break;
+    }
+  }
+}
+
+function calibrateZ() {
+  for (var i = 0; i<60; i++){
+    var signal = checkSignal();
+    if (signal) {
+      navigation.z = signal;
+      break;
+    }
+  }
+}
+
+function calibrate() {
+  calibrateX();
+  calibrateY();
+  calibrateZ();
+}
+
+
 function checkSignal() {
   return 2;
 }
@@ -140,8 +167,8 @@ setFrequency();
 //challenge 12
 initialize();
 
-//challenge 13
-calibrateX();
+//challenge 13,14,15
+calibrate();
 
 console.log("Available Modules: ");
 console.log(availableModules);
@@ -149,4 +176,5 @@ console.log("Ship: ");
 console.log(ship);
 console.log("Radio: ");
 console.log(radio);
-console.log("Navigation X: " + navigation.x);
+console.log("Navigation: ");
+console.log(navigation);
