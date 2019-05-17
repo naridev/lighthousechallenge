@@ -141,6 +141,10 @@ function setSpeed(speed) {
   }
 }
 
+function activateAntenna() {
+  ship.antenna.active = true;
+}
+
 /*Function calls*/
 
 //challenge 3
@@ -178,6 +182,9 @@ calibrate();
 
 //challenge 16
 setSpeed(10);
+
+//challenge 17
+activateAntenna();
 
 console.log("Available Modules: ");
 console.log(availableModules);
