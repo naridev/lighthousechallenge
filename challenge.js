@@ -154,6 +154,7 @@ function sendBroadcast() {
 
 function broadcast() {
   ship.broadcast = true;
+  return "4B6";
 }
 
 function configureBroadcast() {
@@ -171,6 +172,21 @@ function decodeMessage(message) {
   msg = msg.replace(/2/g, 'u');
   
   return msg;
+}
+
+function returnToEarth() {
+  let x = broadcast("x");
+  let y = broadcast("y");
+  let z = broadcast("z");
+  let xdecode = decodeMessage(x);
+  let ydecode = decodeMessage(y);
+  let zdecode = decodeMessage(z);
+  let xhex = parseInt(xdecode, 16);
+  let yhex = parseInt(ydecode, 16);
+  let zhex = parseInt(zdecode, 16);
+  navigation.x = xhex;
+  navigation.y = yhex;
+  navigation.z = zhex;
 }
 
 /*Function calls*/
@@ -216,6 +232,9 @@ activateAntenna();
 
 //challenge 18, 19
 configureBroadcast();
+
+//challenge 21
+returnToEarth();
 
 console.log("Available Modules: ");
 console.log(availableModules);
