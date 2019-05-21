@@ -4,7 +4,8 @@ var ship = {
     modules: [],
     antenna: {
       active: false
-    }
+    },
+    broadcast: false
   };
 
   var LARRY = {
@@ -145,6 +146,22 @@ function activateAntenna() {
   ship.antenna.active = true;
 }
 
+function sendBroadcast() {
+  for (var i = 0; i<100; i++){
+    broadcast();
+  }
+}
+
+function broadcast() {
+  ship.broadcast = true;
+}
+
+function configureBroadcast() {
+  setFrequency();
+  activateAntenna();
+  sendBroadcast();
+}
+
 /*Function calls*/
 
 //challenge 3
@@ -185,6 +202,9 @@ setSpeed(10);
 
 //challenge 17
 activateAntenna();
+
+//challenge 18, 19
+configureBroadcast();
 
 console.log("Available Modules: ");
 console.log(availableModules);
