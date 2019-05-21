@@ -162,6 +162,17 @@ function configureBroadcast() {
   sendBroadcast();
 }
 
+function decodeMessage(message) {
+  var msg = message.replace(/1/g, 'i');
+  msg = msg.replace(/4/g, 'a');
+  msg = msg.replace(/3/g, 'e');
+  msg = msg.replace(/0/g, 'o');
+  msg = msg.replace(/5/g, 'y');
+  msg = msg.replace(/2/g, 'u');
+  
+  return msg;
+}
+
 /*Function calls*/
 
 //challenge 3
@@ -214,3 +225,7 @@ console.log("Radio: ");
 console.log(radio);
 console.log("Navigation: ");
 console.log(navigation);
+
+//challenge 20
+var message =  "th1s 1s 4 t3st. th1s 1s 0nl5 4 t3st. 1f th1s w3r3 4 r34l m3ss4g3, 502 w021d g3t s0m3th1ng m34n1ngf2l.";
+console.log(decodeMessage(message));
